@@ -121,7 +121,10 @@ class Solution2 {
         var score3 = mathLosser3.await()
 
         var answer: IntArray = intArrayOf(score1,score2,score3)
+        answer.sortDescending()
+        for(i in 0.. answer.count()-1){
 
+        }
 
         return answer
     }
