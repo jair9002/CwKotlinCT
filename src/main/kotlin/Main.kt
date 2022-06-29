@@ -44,16 +44,22 @@ class Solution {
 }//class solution end
 
 suspend fun main(args: Array<String>) {
-    var test = Solution2()
-    var answers :IntArray = intArrayOf(1,2,3,4,5,1,2,3,4,5)
+    var test = MathLosser()
+    var answers :IntArray = intArrayOf(1,3,2,4,2)
+    var answers2 :IntArray = intArrayOf(5,3,1,4,2,4,4,4,4,4,3,3)
+    var answers3 :IntArray = intArrayOf(2,3,2,4,2,4,2,4,4,4,3,2)
+    var answers4:IntArray = intArrayOf(1,2,2,2,5,1,5,3,4,4)
     runBlocking {
         println(test.solution2(answers).contentToString())
+        println(test.solution2(answers2).contentToString())
+        println(test.solution2(answers3).contentToString())
+        println(test.solution2(answers4).contentToString())
     }
 }
 
 class Solution2 {
     suspend fun solution2(answers: IntArray): IntArray {
-
+        var answer: IntArray
         var check = CoroutineScope(Dispatchers.Default)
 
         var mathLosser1 = check.async {
@@ -85,7 +91,7 @@ class Solution2 {
                 }else{
                     count = fixAnswer
                 }
-                print("${count}\t")
+                //print("${count}\t")
                 if(answers[i] == count){
 
                     index++
@@ -120,10 +126,19 @@ class Solution2 {
         var score2 = mathLosser2.await()
         var score3 = mathLosser3.await()
 
-        var answer: IntArray = intArrayOf(score1,score2,score3)
-        answer.sortDescending()
-        for(i in 0.. answer.count()-1){
-
+        var answerTemp: IntArray = intArrayOf(score1,score2,score3)
+        answerTemp.sortDescending()
+        var addIndex : Int = 1
+        for(i in 1.. answerTemp.size-1){
+            if(answerTemp[0] == answerTemp[i]){
+                addIndex++
+            }else{
+               break
+            }
+        }
+        answer = intArrayOf(addIndex)
+        for(i in 0..answer.size-1){
+            answer[i]=i+1
         }
 
         return answer
