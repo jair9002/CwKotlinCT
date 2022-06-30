@@ -2,6 +2,7 @@ import java.lang.StringBuilder
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 import java.util.*
+import kotlin.math.*
 
 class Solution {
     fun solution(s: String): Int {
@@ -44,17 +45,18 @@ class Solution {
 }//class solution end
 
 suspend fun main(args: Array<String>) {
-    var test = MathLosser()
-    var answers :IntArray = intArrayOf(1,3,2,4,2)
-    var answers2 :IntArray = intArrayOf(5,3,1,4,2,4,4,4,4,4,3,3)
-    var answers3 :IntArray = intArrayOf(2,3,2,4,2,4,2,4,4,4,3,2)
-    var answers4:IntArray = intArrayOf(1,2,2,2,5,1,5,3,4,4)
-    runBlocking {
-        println(test.solution2(answers).contentToString())
-        println(test.solution2(answers2).contentToString())
-        println(test.solution2(answers3).contentToString())
-        println(test.solution2(answers4).contentToString())
-    }
+//    var test = MathLosser()
+//    var answers :IntArray = intArrayOf(1,3,2,4,2)
+//    var answers2 :IntArray = intArrayOf(5,3,1,4,2,4,4,4,4,4,3,3)
+//    var answers3 :IntArray = intArrayOf(2,3,2,4,2,4,2,4,4,4,3,2)
+//    var answers4:IntArray = intArrayOf(1,2,2,2,5,1,5,3,4,4)
+//    runBlocking {
+//        println(test.solution2(answers).contentToString())
+//        println(test.solution2(answers2).contentToString())
+//        println(test.solution2(answers3).contentToString())
+//        println(test.solution2(answers4).contentToString())
+//    }
+
 }
 
 class Solution2 {
